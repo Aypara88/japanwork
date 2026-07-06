@@ -3,9 +3,9 @@ import SpLP from "@/imports/Sp診断lpデザインカンプ/index";
 import PcLP from "@/imports/Pc診断lpデザインカンプ/index";
 
 const SP_DESIGN_WIDTH = 390;
-const SP_DESIGN_HEIGHT = 5300;
+const SP_DESIGN_HEIGHT = 5295;
 const PC_DESIGN_WIDTH = 1440;
-const PC_DESIGN_HEIGHT = 7200;
+const PC_DESIGN_HEIGHT = 7763;
 
 // SP Final CTA section — replaces the lowercase <cta /> that React won't render
 function SpFinalCta() {
