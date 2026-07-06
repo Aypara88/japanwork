@@ -76,7 +76,7 @@ function Group6() {
 function SubCopy() {
   return (
     <div className="absolute contents left-[80px] top-[149px]" data-name="sub_copy">
-      <div className="[word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-[80px] text-[0px] text-black text-shadow-[0px_0px_25px_white,0px_0px_12px_white,0px_0px_4px_white] top-[149px] tracking-[5.8px] whitespace-nowrap">
+      <div className="[-webkit-text-stroke:8px_white] [paint-order:stroke_fill] [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-[80px] text-[0px] text-black text-shadow-[0px_0px_60px_white,0px_0px_40px_white,0px_0px_20px_white] top-[149px] tracking-[5.8px] whitespace-nowrap">
         <p className="leading-[68px] mb-0 text-[36px]">マッチングアプリで</p>
         <p className="leading-[68px] text-[54px]">出会った彼…</p>
       </div>
@@ -107,7 +107,7 @@ function SubCopy() {
 function Group() {
   return (
     <div className="absolute contents left-[493px] top-[920px]">
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Medium',sans-serif] font-medium leading-[0] left-[calc(50%-2.5px)] text-[0px] text-black text-center text-shadow-[0px_0px_20px_white,0px_0px_10px_white,0px_0px_4px_white] top-[922px] tracking-[2.8px] w-[365px]">
+      <p className="[-webkit-text-stroke:8px_white] [paint-order:stroke_fill] -translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Medium',sans-serif] font-medium leading-[0] left-[calc(50%-2.5px)] text-[0px] text-black text-center text-shadow-[0px_0px_50px_white,0px_0px_30px_white,0px_0px_10px_white] top-[922px] tracking-[2.8px] w-[365px]">
         <span className="font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[32px] text-[36px]">たった</span>
         <span className="font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[32px] text-[#fa5b76] text-[48px]">1分</span>
         <span className="font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[32px] text-[36px]">で診断</span>
@@ -166,7 +166,7 @@ function Cta() {
 function Fv() {
   return (
     <div className="absolute contents left-[80px] top-[149px]" data-name="FV">
-      <div className="[word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-[80px] text-[#374151] text-[0px] text-shadow-[0px_0px_35px_white,0px_0px_18px_white,0px_0px_6px_white] top-[648px] tracking-[5.6px] whitespace-nowrap">
+      <div className="[-webkit-text-stroke:8px_white] [paint-order:stroke_fill] [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-[80px] text-[#374151] text-[0px] text-shadow-[0px_0px_80px_white,0px_0px_50px_white,0px_0px_25px_white] top-[648px] tracking-[5.6px] whitespace-nowrap">
         <p className="font-['Noto_Serif_JP:SemiBold',sans-serif] font-semibold mb-0">
           <span className="leading-[90px] text-[58px] text-black">もしかして</span>
           <span className="leading-[90px] text-[#fa5b76] text-[80px]">彼</span>
@@ -346,7 +346,7 @@ function Group2() {
         <p className="leading-[42px] mb-0">​</p>
         <p className="leading-[42px]">​</p>
       </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold h-[30px] leading-[28px] left-[calc(50%-21.5px)] text-[36px] text-center text-white top-[1834px] tracking-[5.4px] w-[433px]">その違和感には理由が</p>
+      <p className="[-webkit-text-stroke:8px_#dc546b] [paint-order:stroke_fill] -translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold h-[30px] leading-[28px] left-[calc(50%-21.5px)] text-[36px] text-center text-white top-[1834px] tracking-[5.4px] w-[433px]">その違和感には理由が</p>
     </div>
   );
 }
