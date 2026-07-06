@@ -150,6 +150,8 @@ function Group2() {
         <p className="leading-[28px]">あるかもしれません。</p>
       </div>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold h-[30px] leading-[28px] left-[calc(50%+26px)] text-[20px] text-center text-white top-[1392px] tracking-[2px] w-[220px]">その違和感には理由が</p>
+      <div className="absolute bg-[#dc546b] h-[50px] left-[24px] rounded-[25px] top-[1456px] w-[342px]" />
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_JP:Bold',sans-serif] font-bold leading-[20px] left-[calc(50%-95px)] text-[16px] text-shadow-[2px_2px_4px_rgba(0,0,0,0.25)] text-white top-[1465px] tracking-[0px] whitespace-nowrap">結婚で診断を始める</p>
     </div>
   );
 }
@@ -623,7 +625,6 @@ function Component13() {
       </div>
       <p className="[word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[normal] left-[135px] text-[#dc546b] text-[82px] top-[3267px] whitespace-nowrap">68</p>
       <p className="[word-break:break-word] absolute font-['Noto_Serif_JP:Black',sans-serif] font-black leading-[normal] left-[232px] text-[#dc546b] text-[41px] top-[3308px] whitespace-nowrap">%</p>
-      <p className="[word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[28px] left-[112px] text-[#374151] text-[22px] top-[3259px] tracking-[2.2px] whitespace-nowrap">既婚者の可能性</p>
     </div>
   );
 }
@@ -717,27 +718,25 @@ function Group6() {
 
 function Group8() {
   return (
-    <div className="absolute contents left-[24px] top-[3878px]">
-      <div className="-translate-x-1/2 absolute bg-[#f7e7eb] h-[187px] left-1/2 rounded-[20px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.25)] top-[3878px] w-[342px]" />
-      <p className="[word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-[calc(50%-110px)] text-[0px] text-black top-[3893px] tracking-[0.7px] whitespace-nowrap">
-        <span className="leading-[20px] text-[14px]">本当に</span>
-        <span className="leading-[20px] text-[#dc546b] text-[18px] tracking-[0.9px]">既婚者</span>
-        <span className="leading-[20px] text-[14px]">なのかわからない</span>
-      </p>
-      <p className="[word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-[calc(50%-111px)] text-[0px] text-black top-[3935px] tracking-[0.7px] whitespace-nowrap">
-        <span className="leading-[20px] text-[14px]">自分の</span>
-        <span className="leading-[20px] text-[#dc546b] text-[18px] tracking-[0.9px]">考えすぎ</span>
-        <span className="leading-[20px] text-[14px]">なのかもしれない</span>
-      </p>
-      <p className="[word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-[calc(50%-110px)] text-[0px] text-black top-[3980px] tracking-[0.7px] whitespace-nowrap">
-        <span className="leading-[20px] text-[14px]">相手を疑うことに</span>
-        <span className="leading-[20px] text-[#dc546b] text-[18px] tracking-[0.9px]">罪悪感</span>
-        <span className="leading-[20px] text-[14px]">がある</span>
-      </p>
-      <p className="[word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-[calc(50%-110px)] text-[0px] text-black top-[4025px] tracking-[0.7px] whitespace-nowrap">
-        <span className="leading-[20px] text-[14px]">それでも、なぜか</span>
-        <span className="leading-[20px] text-[#dc546b] text-[18px] tracking-[0.9px]">違和感が消えない</span>
-      </p>
+    <div className="absolute left-[24px] top-[3878px] w-[342px]">
+      <div className="-translate-x-1/2 absolute bg-[#f7e7eb] h-auto left-1/2 rounded-[20px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.25)] top-0 w-[342px] px-8 py-6 flex flex-col gap-6" />
+      <div className="relative z-10 flex flex-col gap-6 pt-4 pb-4">
+        <p className="[word-break:break-word] font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[20px] text-[14px] text-black text-center tracking-[0.7px]">
+          <span>本当に</span>
+          <span className="text-[#dc546b] text-[18px] tracking-[0.9px]">既婚者</span>
+          <span>なのかわからない</span>
+        </p>
+        <p className="[word-break:break-word] font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[20px] text-[14px] text-black text-center tracking-[0.7px]">
+          <span>自分の</span>
+          <span className="text-[#dc546b] text-[18px] tracking-[0.9px]">考えすぎ</span>
+          <span>なのかもしれない</span>
+        </p>
+        <p className="[word-break:break-word] font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[20px] text-[14px] text-black text-center tracking-[0.7px]">
+          <span>相手を疑うことに</span>
+          <span className="text-[#dc546b] text-[18px] tracking-[0.9px]">罪悪感</span>
+          <span>がある</span>
+        </p>
+      </div>
       <Group6 />
     </div>
   );
