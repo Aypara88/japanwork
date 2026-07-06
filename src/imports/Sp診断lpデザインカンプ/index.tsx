@@ -652,7 +652,7 @@ function Component15() {
   return (
     <div className="absolute contents left-[7px] top-[3574px]" data-name="見出し">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[normal] left-[calc(50%+0.5px)] text-[24px] text-black text-center top-[3574px] tracking-[2.4px] whitespace-nowrap">診断結果を見て、</p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[0] left-1/2 text-[#dc546b] text-[0px] text-center top-[3606px] whitespace-nowrap">
+      <p className="-translate-x-1/2 absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[normal] left-1/2 text-[#dc546b] text-center top-[3606px] whitespace-nowrap">
         <span className="leading-[normal] text-[24px]">「</span>
         <span className="leading-[normal] text-[28px]">考えすぎ</span>
         <span className="leading-[normal] text-[24px]">じゃなかったかも…」</span>
@@ -863,7 +863,7 @@ function Cta2() {
   );
 }
 
-function cta() {
+function CtaFinal() {
   return (
     <div className="-translate-x-1/2 absolute contents left-1/2 top-[4436px]" data-name="最終CTA">
       <div className="-translate-x-1/2 absolute bg-[#dc546b] h-[510px] left-1/2 top-[4436px] w-[390px]" />
@@ -964,7 +964,7 @@ export default function Splp() {
       <Component9 />
       <Component12 />
       <Component14 />
-      <cta />
+      <CtaFinal />
       <Footer />
     </div>
   );

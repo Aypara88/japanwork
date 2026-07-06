@@ -196,7 +196,7 @@ function Group3() {
   );
 }
 
-function bg() {
+function BgSection() {
   return (
     <div className="absolute contents left-0 top-[1132px]" data-name="共感BG">
       <div className="absolute h-[864px] left-0 top-[1132px] w-[1440px]">
@@ -354,7 +354,7 @@ function Group2() {
 function Component1() {
   return (
     <div className="absolute contents left-0 top-[1132px]" data-name="共感セクション">
-      <bg />
+      <BgSection />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[48px] left-1/2 text-[48px] text-black text-center top-[1230px] tracking-[7.2px] whitespace-nowrap">こんな違和感、ありませんか？</p>
       <Group1 />
       <Group2 />
@@ -780,7 +780,7 @@ function Component8() {
   return (
     <div className="-translate-x-1/2 absolute contents left-[calc(50%+1px)] top-[4641px]" data-name="見出し">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[normal] left-[calc(50%+1.5px)] text-[48px] text-black text-center top-[4641px] tracking-[4.8px] whitespace-nowrap">診断結果を見て、</p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold h-[67px] leading-[0] left-[calc(50%+1px)] text-[#dc546b] text-[0px] text-center top-[4706px] tracking-[2.4px] w-[814px]">
+      <p className="-translate-x-1/2 absolute font-['Noto_Serif_JP:Bold',sans-serif] font-bold leading-[normal] left-[calc(50%+1px)] text-[#dc546b] text-center top-[4706px] tracking-[2.4px] whitespace-nowrap">
         <span className="leading-[normal] text-[48px] tracking-[4.8px]">「</span>
         <span className="leading-[normal] text-[54px] tracking-[5.4px]">考えすぎ</span>
         <span className="leading-[normal] text-[48px] tracking-[4.8px]">じゃなかったかも…」</span>
@@ -972,7 +972,7 @@ function Cta3() {
   );
 }
 
-function cta() {
+function CtaFinal() {
   return (
     <div className="-translate-x-1/2 absolute contents left-1/2 top-[6067px]" data-name="最終CTA">
       <div className="-translate-x-1/2 absolute bg-[#dc546b] h-[696px] left-1/2 top-[6067px] w-[1440px]" />
@@ -1045,7 +1045,7 @@ export default function Pclp() {
       <Component3 />
       <Component5 />
       <Component7 />
-      <cta />
+      <CtaFinal />
       <Footer />
     </div>
   );
