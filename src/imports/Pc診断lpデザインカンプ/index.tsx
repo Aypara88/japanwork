@@ -158,7 +158,7 @@ function Cta() {
     <div className="-translate-x-1/2 absolute contents left-[calc(50%+0.5px)] top-[920px]" data-name="CTAボタン １">
       <div className="absolute bg-gradient-to-b border border-solid border-white from-[#dd586e] h-[80px] left-[387px] rounded-[45px] to-[#e07488] to-[91.25%] top-[985px] w-[667px]" />
       <Group />
-      <p className="[word-break:break-word] absolute font-['Noto_Sans_JP:Black',sans-serif] font-black leading-[20px] left-[calc(50%-150px)] text-[32px] text-shadow-[0px_2px_2px_rgba(0,0,0,0.25)] text-white top-[1015px] tracking-[6.4px] whitespace-nowrap">既婚者か診断する</p>
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_JP:Black',sans-serif] font-black leading-[20px] left-[calc(50%-180px)] text-[32px] text-shadow-[0px_2px_2px_rgba(0,0,0,0.25)] text-white top-[1015px] tracking-[6.4px] whitespace-nowrap">結婚観の相性診断でわかる</p>
       <Group7 />
     </div>
   );
@@ -185,16 +185,7 @@ function Fv() {
 }
 
 function Group3() {
-  return (
-    <div className="absolute contents left-[64px] top-[1286px]">
-      <div className="absolute h-[491px] left-[64px] top-[1286px] w-[412.62px]" data-name="女性イラスト">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img} />
-      </div>
-      <div className="absolute h-[90px] left-[319px] top-[1309px] w-[121px]" data-name="悩みイラスト">
-        <img alt="" className="absolute inset-0 max-w-none object-cover opacity-70 pointer-events-none size-full" src={img1} />
-      </div>
-    </div>
-  );
+  return null; // Removed duplicate images - only woman image from Component1 is used
 }
 
 function bg() {

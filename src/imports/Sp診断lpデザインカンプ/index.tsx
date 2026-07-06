@@ -155,16 +155,7 @@ function Group2() {
 }
 
 function Group4() {
-  return (
-    <div className="absolute contents left-[-59px] top-[1285px]">
-      <div className="absolute h-[255.165px] left-[-59px] top-[1288.54px] w-[215px]" data-name="女性イラスト">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img} />
-      </div>
-      <div className="absolute h-[31.896px] left-[66.22px] top-[1285px] w-[42.527px]" data-name="悩みイラスト">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img1} />
-      </div>
-    </div>
-  );
+  return null; // Removed duplicate images - only woman image from Component1 is used
 }
 
 function Component1() {
@@ -230,8 +221,8 @@ function Cta() {
   return (
     <div className="absolute contents left-[24px] top-[1768px]" data-name="CTAボタン 2">
       <div className="absolute bg-[#dc546b] h-[60px] left-[24px] rounded-[30px] shadow-[2px_2px_4px_0px_rgba(0,0,0,0.25)] top-[1768px] w-[342px]" />
+      <p className="[word-break:break-word] absolute font-['Noto_Sans_JP:Black',sans-serif] font-black leading-[20px] left-[calc(50%-120px)] text-[16px] text-shadow-[2px_2px_4px_rgba(0,0,0,0.25)] text-white top-[1778px] tracking-[0px] whitespace-nowrap">結婚観の相性診断でわかる</p>
       <Component8 />
-      <p className="[word-break:break-word] absolute font-['Noto_Sans_JP:Black',sans-serif] font-black leading-[20px] left-[calc(50%-145px)] text-[24px] text-shadow-[2px_2px_4px_rgba(0,0,0,0.25)] text-white top-[calc(50%-860.5px)] tracking-[4.8px] whitespace-nowrap">無料で診断を始める</p>
     </div>
   );
 }
@@ -834,7 +825,7 @@ function Component14() {
       <Component17 />
       <Group7 />
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Noto_Serif_JP:Medium',sans-serif] font-medium leading-[0] left-[calc(50%+0.5px)] text-[14px] text-black text-center top-[4362px] tracking-[1.4px] whitespace-nowrap">
-        <p className="leading-[20px] mb-0">その上で、これからどう向き合っていくかを</p>
+        <p className="leading-[20px] mb-0">その上で、これからどう向き���っていくかを</p>
         <p className="leading-[20px]">考えていくことが大切です。</p>
       </div>
     </div>
