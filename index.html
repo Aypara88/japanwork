@@ -1,12 +1,475 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>既婚者診断</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>独身偽装診断 - 既婚者かもしれない違和感を診断</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+  <div class="header-background" style="background-image: url('src/imports/Pc診断lpデザインカンプ/0a135c91bd11614afc26d6bd1293aa57cd1816a4.png');"></div>
+  
+  <div class="logo">
+    <div class="logo-box">ロゴ</div>
+  </div>
+
+  <!-- FV Section -->
+  <section class="fv">
+    <div class="subcopy">
+      <div class="subcopy-title">マッチングアプリで<br>出会った彼…</div>
+      <div class="divider-line dashed-line-1"></div>
+      <div class="symptom">
+        <div class="symptom-item">
+          <div class="checkmark">
+            <div class="checkmark-circle"></div>
+            <div class="checkmark-line line-1"></div>
+            <div class="checkmark-line line-2"></div>
+          </div>
+          <p>昼間や休日になかなか会えない…</p>
+        </div>
+      </div>
+
+      <div class="divider-line dashed-line-2"></div>
+
+      <div class="symptom">
+        <div class="symptom-item">
+          <div class="checkmark">
+            <div class="checkmark-circle"></div>
+            <div class="checkmark-line line-1"></div>
+            <div class="checkmark-line line-2"></div>
+          </div>
+          <p>結婚の話になると話題を変えられる</p>
+        </div>
+      </div>
+
+      <div class="symptom">
+        <div class="symptom-item">
+          <div class="checkmark">
+            <div class="checkmark-circle"></div>
+            <div class="checkmark-line line-1"></div>
+            <div class="checkmark-line line-2"></div>
+          </div>
+          <p>友人や家族を紹介してくれない</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-title">もしかして彼、<br>既婚者かもしれない…</div>
+  </section>
+
+  <!-- CTA Button 1 -->
+  <div class="cta-button-wrapper cta-1">
+    <div class="cta-label">たった1分で診断</div>
+    <div class="cta-decorative-line line-left"></div>
+    <div class="cta-decorative-line line-right"></div>
+    <button class="cta-button">
+      <span>既婚者か診断する</span>
+      <div class="button-arrow">
+        <div class="arrow-circle"></div>
+        <div class="arrow-line line-1"></div>
+        <div class="arrow-line line-2"></div>
+      </div>
+    </button>
+  </div>
+</header>
+
+<!-- 共感セクション (Empathy Section) -->
+<section class="empathy-section">
+  <div class="empathy-background" style="background-image: url('src/imports/Pc診断lpデザインカンプ/23b9545365e9a909723dfed210996677c7787bc4.png');"></div>
+
+  <div class="empathy-content">
+    <h2 class="empathy-title">こんな違和感、ありませんか？</h2>
+
+    <div class="empathy-grid">
+      <div class="empathy-illustration" style="background-image: url('src/imports/Pc診断lpデザインカンプ/247d400d408c92e710a1e9c74ad0676f8eaf2157.png');"></div>
+
+      <div class="symptoms-list">
+        <div class="checkmark-item">
+          <div class="checkmark-icon">
+            <div class="checkmark-circle"></div>
+            <div class="checkmark-line line-1"></div>
+            <div class="checkmark-line line-2"></div>
+          </div>
+        </div>
+        <div class="symptoms-text">
+          <p>私だけが本気なのか、不安になることがある</p>
+          <p>休日や連休になると、なかなか会えない</p>
+          <p>家を教えてくれず、将来の話になると話題を変えられる</p>
+          <p>友人や家族を紹介されたことがない</p>
+          <p>「私の考えすぎかな…」と思いながらも違和感が消えない</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="empathy-box">
+      <p>ひとつでも当てはまる場合、</p>
+      <p>あなたが感じている<span class="highlight">違和感</span></p>
+      <p><span class="highlight">あるかもしれません。</span></p>
+      <div class="reason-line"></div>
+      <p>その違和感には理由が</p>
+    </div>
+  </div>
+</section>
+
+<!-- 診断導入セクション (Diagnosis Introduction) -->
+<section class="diagnosis-intro">
+  <h2 class="intro-title">まずは現在の状況を整理するために<br>無料で診断してみませんか？</h2>
+
+  <div class="features">
+    <div class="feature-item">
+      <div class="feature-icon" style="background-image: url('src/imports/Pc診断lpデザインカンプ/32f37c976a68c4a796e17e90dd56376f70940f6f.png');"></div>
+      <p>所要時間：約1分</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon" style="background-image: url('src/imports/Pc診断lpデザインカンプ/40f37646b84e34e8b24324f07b5262c76c1f1d7c.png');"></div>
+      <p>完全無料</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon" style="background-image: url('src/imports/Pc診断lpデザインカンプ/3a2e5d63052d2db5de4e6255d4ebf5b4d68bf58b.png');"></div>
+      <p>匿名で利用可能</p>
+    </div>
+  </div>
+
+  <!-- CTA Button 2 -->
+  <button class="cta-button cta-2">
+    <span>無料で診断を始める</span>
+    <div class="button-arrow">
+      <div class="arrow-circle"></div>
+      <div class="arrow-line line-1"></div>
+      <div class="arrow-line line-2"></div>
+    </div>
+  </button>
+</section>
+
+<!-- 診断セクション (Diagnosis Section) -->
+<section class="diagnosis-section">
+  <div class="diagnosis-intro-text">
+    <p>直感でお答えください。</p>
+    <p>深く考えすぎず、今感じているまま選択してください。</p>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-label">10%</span>
+    <div class="progress-track">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Question 1 -->
+  <div class="question">
+    <div class="question-number">Q1</div>
+    <div class="question-title">週末や夜に連絡がつきにくいことが多い</div>
+    <div class="question-options">
+      <div class="option">
+        <div class="option-circle pink"></div>
+        <label>とても<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>やや<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>どちらとも<br>いえない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>あまり<br>当てはまらない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>まったく<br>当てはまらない</label>
+      </div>
+    </div>
+    <div class="question-nav">
+      <div class="arrow left"></div>
+      <div class="arrow right"></div>
+    </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question">
+    <div class="question-number">Q</div>
+    <div class="question-title">週末や夜に連絡がつきにくいことが多い</div>
+    <div class="question-options">
+      <div class="option">
+        <div class="option-circle pink"></div>
+        <label>とても<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>やや<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>どちらとも<br>いえない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>あまり<br>当てはまらない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>まったく<br>当てはまらない</label>
+      </div>
+    </div>
+    <div class="question-nav">
+      <div class="arrow left"></div>
+      <div class="arrow right"></div>
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question">
+    <div class="question-number">Q</div>
+    <div class="question-title">週末や夜に連絡がつきにくいことが多い</div>
+    <div class="question-options">
+      <div class="option">
+        <div class="option-circle pink"></div>
+        <label>とても<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>やや<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>どちらとも<br>いえない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>あまり<br>当てはまらない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>まったく<br>当てはまらない</label>
+      </div>
+    </div>
+    <div class="question-nav">
+      <div class="arrow left"></div>
+      <div class="arrow right"></div>
+    </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question">
+    <div class="question-number">Q</div>
+    <div class="question-title">週末や夜に連絡がつきにくいことが多い</div>
+    <div class="question-options">
+      <div class="option">
+        <div class="option-circle pink"></div>
+        <label>とても<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>やや<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>どちらとも<br>いえない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>あまり<br>当てはまらない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>まったく<br>当てはまらない</label>
+      </div>
+    </div>
+    <div class="question-nav">
+      <div class="arrow left"></div>
+      <div class="arrow right"></div>
+    </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question">
+    <div class="question-number">Q</div>
+    <div class="question-title">週末や夜に連絡がつきにくいことが多い</div>
+    <div class="question-options">
+      <div class="option">
+        <div class="option-circle pink"></div>
+        <label>とても<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>やや<br>当てはまる</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>どちらとも<br>いえない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>あまり<br>当てはまらない</label>
+      </div>
+      <div class="option">
+        <div class="option-circle gray"></div>
+        <label>まったく<br>当てはまらない</label>
+      </div>
+    </div>
+    <div class="question-nav">
+      <div class="arrow left"></div>
+      <div class="arrow right"></div>
+    </div>
+  </div>
+
+  <!-- CTA Button 3 -->
+  <button class="cta-button cta-result">
+    <span>診断結果を見る</span>
+    <div class="button-arrow">
+      <div class="arrow-circle"></div>
+      <div class="arrow-line line-1"></div>
+      <div class="arrow-line line-2"></div>
+    </div>
+  </button>
+</section>
+
+<!-- 診断結果セクション (Results Section) -->
+<section class="results-section">
+  <h2>あなたの診断結果</h2>
+
+  <div class="result-chart">
+    <div class="chart-container">
+      <svg viewBox="0 0 200 200" class="pie-chart">
+        <circle cx="100" cy="100" r="95" fill="none" stroke="#FEF8EE" stroke-width="20"></circle>
+        <circle cx="100" cy="100" r="95" fill="none" stroke="#D96C8A" stroke-width="20" stroke-dasharray="534 1884" stroke-dashoffset="0"></circle>
+      </svg>
+      <div class="chart-center">
+        <span class="percentage">68</span>
+        <span class="unit">%</span>
+        <p>既婚者の可能性</p>
+      </div>
+    </div>
+    <div class="result-line"></div>
+    <p class="result-message">既婚者の可能性が疑われます。</p>
+  </div>
+</section>
+
+<!-- 不安セクション (Anxiety Section) -->
+<section class="anxiety-section">
+  <div class="anxiety-content">
+    <h2>診断結果を見て、</h2>
+    <h2 class="highlight-text">「考えすぎじゃなかったかも…」</h2>
+    <h2>そう感じた方へ</h2>
+
+    <div class="anxiety-divider"></div>
+
+    <div class="anxiety-text">
+      <p>「やっぱり、私の感じていた違和感は間違っていなかったかもしれない…」</p>
+      <p>そう感じた方もいれば、</p>
+      <p>「まだ確信は持てないけれど、なんだか不安になった」</p>
+      <p>という方もいらっしゃるかもしれません。</p>
+      <p>実際、独身偽装の問題では、</p>
+    </div>
+
+    <div class="concerns-box">
+      <div class="concern-item">
+        <div class="concern-circle">
+          <div class="checkmark-mark line-1"></div>
+          <div class="checkmark-mark line-2"></div>
+        </div>
+        <p>本当に既婚者なのかわからない</p>
+      </div>
+      <div class="concern-divider"></div>
+      <div class="concern-item">
+        <div class="concern-circle">
+          <div class="checkmark-mark line-1"></div>
+          <div class="checkmark-mark line-2"></div>
+        </div>
+        <p>自分の考えすぎなのかもしれない</p>
+      </div>
+      <div class="concern-divider"></div>
+      <div class="concern-item">
+        <div class="concern-circle">
+          <div class="checkmark-mark line-1"></div>
+          <div class="checkmark-mark line-2"></div>
+        </div>
+        <p>相手を疑うことに罪悪感がある</p>
+      </div>
+      <div class="concern-divider"></div>
+      <div class="concern-item">
+        <div class="concern-circle">
+          <div class="checkmark-mark line-1"></div>
+          <div class="checkmark-mark line-2"></div>
+        </div>
+        <p>それでも、なぜか違和感が消えない</p>
+      </div>
+    </div>
+
+    <div class="anxiety-continuation">
+      <p>と悩みながら、一人で答えを探し続けてしまう方が少なくありません。</p>
+      <div class="continuation-divider"></div>
+      <p>そして後になって、<br>「あの時感じていた違和感には、理由があった」とわかるケースもあります。</p>
+      <div class="continuation-divider"></div>
+      <p>大切なのは、<br>一人で結論を出そうとすることではありません。</p>
+    </div>
+
+    <div class="key-message">
+      <p>まずは正しい情報を知り、今の状況を整理すること。</p>
+    </div>
+
+    <p class="follow-up-text">その上で、これからどう向き合っていくかを考えていくことが大切です。</p>
+
+    <div class="illustration-woman" style="background-image: url('src/imports/Pc診断lpデザインカンプ/8f87e713cc9ccb3a4577e1919c88e7e0aa51fab7.png');"></div>
+  </div>
+</section>
+
+<!-- 最終CTA (Final CTA) -->
+<section class="final-cta-section">
+  <h2>まだ、一人で結論を出さないでください。</h2>
+
+  <div class="final-message">
+    <p>本当に既婚者なのか。</p>
+    <p>慰謝料を請求できる可能性があるのか。</p>
+    <p>今後どのように対応すればよいのか。</p>
+    <p>次のページでは、独身偽装問題に詳しい弁護士が、</p>
+    <p>あなたのケースで知っておきたいポイントを分かりやすく解説しています。</p>
+  </div>
+
+  <button class="cta-button cta-final">
+    <span>私の場合を詳しく確認する</span>
+    <div class="button-arrow">
+      <div class="arrow-circle"></div>
+      <div class="arrow-line line-1"></div>
+      <div class="arrow-line line-2"></div>
+    </div>
+  </button>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <div class="logo-box-footer">ロゴ</div>
+    </div>
+
+    <div class="footer-info">
+      <h3>名城法律事務所 サテライトオフィス</h3>
+      <p>最寄駅：地下鉄桜通線「久屋大通駅」2番A出口</p>
+      <p>代表弁護士：石田　大輔</p>
+      <p>所属弁護士会：愛知弁護士会</p>
+      <p>登録番号：42317</p>
+    </div>
+
+    <div class="footer-disclaimer">
+      <p>※本サイトの診断結果は参考情報であり、実際の状況を断定するものではありません。</p>
+      <p>※個別の事案については、弁護士にご相談ください。</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#privacy">プライバシーポリシー</a>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <p>©名城法律事務所サテライトオフィス　︎All Rights Reserved</p>
+  </div>
+</footer>
+
+</body>
 </html>
