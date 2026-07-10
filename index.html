@@ -1,12 +1,719 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>既婚者診断</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>婚活診断 - あなたの悩み相談</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Arial', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .logo {
+            font-size: 12px;
+            color: #999;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #a68062 0%, #8b6f47 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+        }
+
+        .hero .subtitle {
+            font-size: 13px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+        }
+
+        .hero .subtitle p {
+            margin-bottom: 8px;
+        }
+
+        .hero .points {
+            font-size: 12px;
+            text-align: left;
+            display: inline-block;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.12);
+            padding: 16px 24px;
+            border-radius: 6px;
+            line-height: 1.9;
+            list-style: none;
+        }
+
+        .hero .points li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .hero .points li:before {
+            content: "✓";
+            color: #ffb3d9;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* ===== HERO IMAGE ===== */
+        .hero-image {
+            background: linear-gradient(180deg, #f8f6f4 0%, #fafaf9 100%);
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            background-color: #fff;
+            margin-bottom: 25px;
+            padding: 28px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #d946a6;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+
+        .section h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        .section p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            letter-spacing: 0.2px;
+        }
+
+        /* ===== CTA BUTTON ===== */
+        .cta-button {
+            display: block;
+            width: fit-content;
+            margin: 25px auto;
+            background-color: #d946a6;
+            color: white;
+            padding: 14px 45px;
+            border: none;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(217, 70, 166, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #c73a95;
+            box-shadow: 0 6px 14px rgba(217, 70, 166, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* ===== INFO SECTION ===== */
+        .info-section {
+            background-color: #fafaf9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d946a6;
+        }
+
+        .info-section h4 {
+            font-size: 13px;
+            color: #d946a6;
+            margin-bottom: 12px;
+            font-weight: bold;
+            letter-spacing: 0.2px;
+        }
+
+        .info-section p {
+            font-size: 12px;
+            color: #777;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .info-section ul {
+            list-style: none;
+            font-size: 12px;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        .info-section ul li {
+            margin-bottom: 8px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .info-section ul li:before {
+            content: "✓";
+            color: #d946a6;
+            position: absolute;
+            left: 0;
+        }
+
+        /* ===== QUESTIONS CONTAINER ===== */
+        .questions-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin: 30px 0;
+        }
+
+        .question-card {
+            background-color: #fafaf9;
+            padding: 22px;
+            border-radius: 8px;
+            border-left: 4px solid #d946a6;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-card .number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #d946a6;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .question-card h4 {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .question-card .options {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .question-card .option-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #e8e8e8;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-card .option-circle:hover {
+            background-color: #d946a6;
+            border-color: #d946a6;
+            transform: scale(1.08);
+        }
+
+        /* ===== RESULTS SECTION ===== */
+        .results-section {
+            background: linear-gradient(135deg, #fff0f7 0%, #fffbfc 100%);
+            padding: 40px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .results-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(#d946a6 0deg 244.8deg, #e8e8e8 244.8deg 360deg);
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #d946a6;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(217, 70, 166, 0.15);
+        }
+
+        .results-section h3 {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .results-section > p {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* ===== CHARACTER BOX ===== */
+        .character-box {
+            background-color: #f5f5f5;
+            padding: 25px 20px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .character-box .character {
+            width: 70px;
+            height: 70px;
+            background-color: #d8d8d8;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .character-box h4 {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .character-box p {
+            font-size: 12px;
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 35px 20px;
+            text-align: center;
+            font-size: 11px;
+            line-height: 1.9;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer strong {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* ===== RESPONSIVE DESIGN - TABLET ===== */
+        @media (min-width: 768px) {
+            header {
+                padding: 18px 30px;
+            }
+
+            header .logo {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 50px 40px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+
+            .hero .subtitle {
+                font-size: 14px;
+            }
+
+            .hero-image {
+                padding: 40px 30px;
+            }
+
+            .hero-image img {
+                max-width: 350px;
+            }
+
+            .container {
+                padding: 0 30px;
+            }
+
+            .section {
+                padding: 35px 30px;
+                margin-bottom: 30px;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .questions-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .question-card {
+                padding: 25px;
+            }
+
+            .results-circle {
+                width: 220px;
+                height: 220px;
+                font-size: 42px;
+            }
+
+            .character-box {
+                padding: 30px 25px;
+            }
+
+            footer {
+                font-size: 12px;
+                padding: 40px 30px;
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN - DESKTOP ===== */
+        @media (min-width: 1024px) {
+            header {
+                padding: 20px 50px;
+            }
+
+            .hero {
+                padding: 60px 50px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-image {
+                padding: 50px 40px;
+            }
+
+            .hero-image img {
+                max-width: 400px;
+            }
+
+            .container {
+                padding: 0 50px;
+            }
+
+            .section {
+                padding: 45px 50px;
+                margin-bottom: 35px;
+            }
+
+            .section h2 {
+                font-size: 32px;
+            }
+
+            .questions-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+
+            .question-card {
+                padding: 28px;
+            }
+
+            .results-circle {
+                width: 260px;
+                height: 260px;
+                font-size: 48px;
+            }
+
+            footer {
+                font-size: 13px;
+                padding: 45px 50px;
+            }
+        }
+
+        /* ===== LARGE DESKTOP ===== */
+        @media (min-width: 1440px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .section h2 {
+                font-size: 36px;
+            }
+
+            .questions-container {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">ロゴ</div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>こんなお悩みはありませんか？<br>出会った後の悩み</h1>
+        <div class="subtitle">
+            <p>結婚後の結婚生活で心配なことがある</p>
+            <p>相手との関係を改善したい</p>
+            <p>人間関係をもっとしたい</p>
+        </div>
+        <ul class="points">
+            <li>もし婚活で悩んでいる</li>
+            <li>将来のことが不安</li>
+            <li>人間関係が難しい</li>
+        </ul>
+    </section>
+
+    <!-- HERO IMAGE -->
+    <section class="hero-image">
+        <img src="https://via.placeholder.com/400x500/a68062/ffffff?text=相談者" alt="相談者のイメージ">
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- DIAGNOSIS TITLE -->
+        <section class="section">
+            <h2>婚活者<br>あるしんおない</h2>
+            <button class="cta-button">無料診断を体験する</button>
+
+            <div class="info-section">
+                <h4>こんなお悩みはありませんか？</h4>
+                <p>✓ 出会いが減ってきた。すぐに連絡がくる</p>
+                <p>✓ 関わり方に悩まされている。わかりたい</p>
+                <p>✓ 人間関係に悩んでいる</p>
+                <p>✓ もし回答をもっと知りたい</p>
+                <p>✓ 相手のことをもっと全員相手に相談しないのか</p>
+            </div>
+        </section>
+
+        <!-- WHY DIAGNOSIS -->
+        <section class="section">
+            <h3>まずは、入口で結論を出さないでください。</h3>
+            <p>本心より相談を見つけるために診断での診断をしてみませんか？</p>
+            <div class="info-section">
+                <ul>
+                    <li>相談内容がわかるように診断が進みます</li>
+                    <li>今後の課題とサポートの内容が分かります</li>
+                    <li>あなたが今必要としている対策が分かります</li>
+                </ul>
+            </div>
+            <button class="cta-button">無料で診断を始める</button>
+        </section>
+
+        <!-- QUESTIONS SECTION -->
+        <section class="section">
+            <h2>診断を受けやすくする</h2>
+            <p style="text-align: center; margin-bottom: 30px;">以下のそれぞれにお答えください。子連れ結婚について</p>
+
+            <div class="questions-container">
+                <!-- Q1 -->
+                <div class="question-card">
+                    <div class="number">01</div>
+                    <h4>まずはどのような悩みのですか？</h4>
+                    <div class="options">
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="question-card">
+                    <div class="number">02</div>
+                    <h4>どのような人間関係がありますか？</h4>
+                    <div class="options">
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="question-card">
+                    <div class="number">03</div>
+                    <h4>お相手はいますか？いつ頃ですか？</h4>
+                    <div class="options">
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="question-card">
+                    <div class="number">04</div>
+                    <h4>今まで失敗した対策はありますか？</h4>
+                    <div class="options">
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="question-card">
+                    <div class="number">05</div>
+                    <h4>失活した内容はありますか？</h4>
+                    <div class="options">
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                        <div class="option-circle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="cta-button">診断結果を見る</button>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="results-section">
+            <h2>あなたの診断結果</h2>
+            <div class="results-circle">68%</div>
+            <h3>実現者の状況判定です</h3>
+            <p>診断者の年齢でも対応しています</p>
+        </section>
+
+        <!-- DIAGNOSIS EXPLANATION -->
+        <section class="section">
+            <h2>診断結果を見て、<br>「考えます！生きなかったかわかり...」<br>そういう場合へ</h2>
+            
+            <p style="margin-top: 20px;">
+                「いつもは、相談している相談者の診断の価値や相手のことをもっと別にどうしたらいいのか、それらを解決するものが見つかりにくいと思いませんか？」<br><br>
+                それが的確な診断であれば、あなたが今すぐにできることもあります。今のは一人で出来るのか、それとも誰かの後ろ盾があると助かるのか。どちらなのかが分かることが重要です。
+            </p>
+
+            <div class="info-section">
+                <h4>■ 人間関係が大事なために</h4>
+                <p>✓ 人間関係をもっとたくさんしたい</p>
+                <p>✓ 出会いのさせると分かります</p>
+                <p>✓ それこそ、相談が価値がない</p>
+                <p>✓ こうしたことが相談が価値がない</p>
+            </div>
+
+            <p>
+                こうしたことで、一人で相手していれば、多数の人が相談してくることでさまざまなります。一人で消費しているかもしれません。「単に、相談をしてください。」と言ってくる人が多いのですから、相手が何を期待しているかを見つけることが最初です。
+            </p>
+
+            <button class="cta-button">無料相談を始めましょう</button>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section">
+            <h2>も、人と結論を出させるなく，ください。</h2>
+            
+            <div class="character-box">
+                <div class="character"></div>
+                <h4>相談者の声①</h4>
+                <p>「実際に診断を受けてみたら、自分が気づかなかったことがたくさん見えてきた。今は、相談を通じて毎日がいっぱいになっている。」</p>
+            </div>
+
+            <div class="character-box">
+                <div class="character"></div>
+                <h4>相談者の声②</h4>
+                <p>「診断の種類も多く、分かりやすかった。相談を始めて３ヶ月で実は、相談の種類が増えた。」</p>
+            </div>
+
+            <div class="character-box">
+                <div class="character"></div>
+                <h4>相談者の声③</h4>
+                <p>「相談によって、何が自分の変わったのか、ある人へ行くことができるようになった。たくさんの相談があった。」</p>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section" style="background: linear-gradient(135deg, #d946a6 0%, #c73a95 100%); color: white; text-align: center; margin-bottom: 30px;">
+            <h2 style="color: white; margin-bottom: 15px;">また、一人で結論を出さないでください。</h2>
+            <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 25px;">
+                本当に相談が必要なのか。<br>
+                相談内容がピッタリなのか。<br>
+                今後のことについて一体何をしたらいいのか。<br>
+                あなたのペースで相談できるかもしれません。
+            </p>
+            <button class="cta-button" style="background-color: white; color: #d946a6; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);">私の悩みを相談してもらう</button>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>会社情報</strong></p>
+        <p>サービス名 | プライバシーポリシー</p>
+        <p>〒000-0000</p>
+        <p>TEL: 000-0000-0000</p>
+        <p>© 2024 All Rights Reserved.</p>
+    </footer>
+</body>
 </html>
