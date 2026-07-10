@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>既婚者診断</title>
+    <script>
+      // Route to the pre-rendered mobile or desktop static page.
+      var vw = window.innerWidth;
+      if (vw < 1024) {
+        window.location.replace('./index-sp.html');
+      } else {
+        window.location.replace('./index-pc.html');
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <p>JavaScriptが無効になっています。以下のリンクからご覧ください。</p>
+      <ul>
+        <li><a href="./index-sp.html">モバイル版</a></li>
+        <li><a href="./index-pc.html">PC版</a></li>
+      </ul>
+    </noscript>
+  </body>
+</html>
